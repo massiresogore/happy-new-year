@@ -16,7 +16,6 @@
                 <nav>
                     <ul>
                         <li><a href="{{ asset( path('app_home') )}}" >Home</a></li>
-                        <li><a href="{{ asset( path('app_about')) }}">About</a></li>
                     </ul>
                 </nav>
                 
@@ -27,9 +26,12 @@
                     {% block body %}{% endblock %}
                 </main>
             <footer>
-                &copy;Copyright - {{ 'now' | date('Y')}} .
-                {{ (app.request.get('_route') != "app_about" ) ? '<a href="{{ asset(path("app_about"))}}">About</a>'
-                  : ''}}
+               <p> &copy;Copyright - {{ 'now' | date('Y')}} .
+                {% if (app.request.get('_route') != "app_about" ) %}
+                 <a href={{ path('app_about') }}>About</a>
+                 {% else %}
+                 ''
+                 {% endif %}</p>
             </footer>
         </div>
     </body>

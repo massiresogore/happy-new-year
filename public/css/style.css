@@ -2,5 +2,34 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+   
 }
 
+body{
+  border: 1px solid red;
+  height: 100vh;
+}
+.main-block{
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: minmax(40px, 80px) repeat(3, 1fr);
+
+ height: 100%;
+}
+nav{
+
+  /* background-color: orange; */
+}
+
+main{
+  /* background-color: red; */
+}
+header{
+  /* background-color: green; */
+}
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* background-color: yellow; */
+}

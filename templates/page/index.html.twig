@@ -3,15 +3,13 @@
 {% block title %}Home {{ parent() }} {% endblock %}
 
 
-{% block header %}  <h1>Home Page</h1> {% endblock header %}
-
-{% block body %}
-
-    {% if isNewYear %}
-        <p>Heureuse Nouvelle année</p>
+{% block header %} 
+    {% if true %}
+        <h1>Heureuse Nouvelle année {{'now' | date('d/m/Y H:i:s', 'Europe/Paris')}}</h1>
     {% else %}
         <p>Oup's Il reste {{ dayLeft }} jours avant la nouvelle année en Europe/Paris</p>
-    {% endif %}
-{% endblock body %}
+    {% endif %} {% endblock header %}
+
+
  
 
