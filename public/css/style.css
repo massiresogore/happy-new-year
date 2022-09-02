@@ -6,15 +6,13 @@
 }
 
 body{
-  border: 1px solid red;
   height: 100vh;
 }
 .main-block{
+  height: 100%;
  display: grid;
  grid-template-columns: 1fr;
- grid-template-rows: minmax(40px, 80px) repeat(3, 1fr);
-
- height: 100%;
+ grid-template-rows: minmax(40px, 80px) minmax(30px, 40px) repeat(2, 1fr);
 }
 nav{
 

@@ -8,20 +8,20 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class PageServiceController
 {
-    // public $timezone;
+    public $timezone;
 
-    // public function __construct(ParameterBagInterface $parameterBagInterface)
-    // {
-    //     dd($parameterBagInterface->get());
-    // }
+    public function __construct(ParameterBagInterface $parameterBagInterface)
+    {
+        $this->timezone = $parameterBagInterface->get('app.timezone');
+    }
     public function dayLeftUntilNextYear()
     {
-        return (new DateTimeImmutable(' 1st January next Year ', (new DateTimeZone('Europe/Paris'))))->diff($this->dateNow());
+        return (new DateTimeImmutable(' 1st January next Year ', (new DateTimeZone($this->timezone))))->diff($this->dateNow());
     }
 
     public function dateNow(): DateTimeImmutable
     {
-        return new DateTimeImmutable('now', new DateTimeZone('Europe/Paris'));
+        return new DateTimeImmutable('now', new DateTimeZone($this->timezone));
     }
 
     public function isNewYear()

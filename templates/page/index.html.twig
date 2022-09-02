@@ -7,8 +7,14 @@
     {% if isNewYear %}
         <h1>Heureuse Nouvelle année {{'now' | date('d/m/Y H:i:s', timezone)}}</h1>
     {% else %}
-        <h1>Oup's Il reste {{ dayLeft }} jours avant la nouvelle année en {{ timezone }}</h1>
-    {% endif %} {% endblock header %}
+        <h1>Oup's Il reste encore {{ dayLeft }} jours avant la nouvelle année en {{ timezone }} !!!</h1>
+{% endif %} {% endblock header %}
+{% block body %}
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio voluptatum soluta praesentium numquam perferendis quia excepturi earum aliquid eius consequuntur libero, laboriosam, tempore modi perspiciatis quasi dolor iusto accusamus. Expedita?
+Velit ullam numquam explicabo magnam perspiciatis quo quae, dicta sequi saepe fuga reiciendis provident sed? Fugit provident nam, ducimus, enim doloribus blanditiis minima cupiditate eos minus harum voluptates modi laborum.
+Error architecto molestiae expedita ratione consequuntur ad molestias ea voluptas maiores a laboriosam beatae sed porro, quaerat aliquam recusandae soluta odit totam, obcaecati ut dicta velit vitae maxime debitis? Iusto?
+</p>
+{% endblock body %}
 
 
  
