@@ -14,19 +14,22 @@
         {% endblock %}
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="{{ asset( path('app_home') )}}" >Home</a></li>
-                <li><a href="{{ asset( path('app_about')) }}">About</a></li>
-            </ul>
-        </nav>
-       <header>   
-           {% block header %} {% endblock header %}
-        </header>
-        <main>
-           {% block main %} {% endblock main %}
-        </main>
-        <footer> &copy;Copyright - {{ 'now' | date('Y')}}</footer>
-        {% block body %}{% endblock %}
+    
+            <nav>
+                <ul>
+                    <li><a href="{{ asset( path('app_home') )}}" >Home</a></li>
+                    <li><a href="{{ asset( path('app_about')) }}">About</a></li>
+                </ul>
+            </nav>
+
+        {% block body %}
+            <header>   
+                {% block header %} {% endblock header %}
+            </header>
+            <main>
+                {% block main %} {% endblock main %}
+            </main>
+        {% endblock %}
+         <footer> &copy;Copyright - {{ 'now' | date('Y')}}</footer>
     </body>
 </html>
