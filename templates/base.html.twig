@@ -19,6 +19,7 @@
                         <li><a href="{{ asset( path('app_about')) }}">About</a></li>
                     </ul>
                 </nav>
+                
                 <header>
                     {% block header %} {% endblock header %}
                 </header>
@@ -26,7 +27,9 @@
                     {% block body %}{% endblock %}
                 </main>
             <footer>
-                &copy;Copyright - {{ 'now' | date('Y')}} . <a href="{{ asset(path('app_about'))}}">About</a>
+                &copy;Copyright - {{ 'now' | date('Y')}} .
+                {{ (app.request.get('_route') != "app_about" ) ? '<a href="{{ asset(path("app_about"))}}">About</a>'
+                  : ''}}
             </footer>
         </div>
     </body>
