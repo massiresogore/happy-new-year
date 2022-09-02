@@ -4,10 +4,10 @@
 
 
 {% block header %} 
-    {% if true %}
-        <h1>Heureuse Nouvelle année {{'now' | date('d/m/Y H:i:s', 'Europe/Paris')}}</h1>
+    {% if isNewYear %}
+        <h1>Heureuse Nouvelle année {{'now' | date('d/m/Y H:i:s', timezone)}}</h1>
     {% else %}
-        <p>Oup's Il reste {{ dayLeft }} jours avant la nouvelle année en Europe/Paris</p>
+        <h1>Oup's Il reste {{ dayLeft }} jours avant la nouvelle année en {{ timezone }}</h1>
     {% endif %} {% endblock header %}
 
 

@@ -26,11 +26,11 @@
                     {% block body %}{% endblock %}
                 </main>
             <footer>
-               <p> &copy;Copyright - {{ 'now' | date('Y')}} .
+               <p> &copy;Copyright - {{ 'now' | date('Y')}} 
                 {% if (app.request.get('_route') != "app_about" ) %}
                  <a href={{ path('app_about') }}>About</a>
                  {% else %}
-                 ''
+               
                  {% endif %}</p>
             </footer>
         </div>
