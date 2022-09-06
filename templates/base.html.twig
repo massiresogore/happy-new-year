@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang=''>
+<html lang={{app.request.getLocale |replace({'_': '-'})}}>
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}H-N-Y{% endblock %}</title>
@@ -12,11 +12,16 @@
         {% endblock %}
     </head>
     <body>
-            <div class='main-block'>
+        <div class='main-block'>
                 <nav>
-                    <ul>
-                        <li><a href="{{ asset( path('app_home') )}}" >Home</a></li>
+                    <ul class='nav-link'>
+                        <li><a href="{{ asset( path('app_home') )}}" >{{'Home' |trans}}</a></li>
+                        <div class="locale">
+                            <li><a href="/fr" >🇫🇷</a></li>
+                            <li><a href="/en" >🇬🇧</a></li>
+                        </div>  
                     </ul>
+                    
                 </nav>
                 
                 <header>
@@ -28,7 +33,7 @@
             <footer>
                <p> &copy;Copyright - {{ 'now' | date('Y')}} 
                 {% if (app.request.get('_route') != "app_about" ) %}
-                 <a href={{ path('app_about') }}>About</a>
+                 <a href={{ path('app_about') }}>{{'About'|trans}}</a>
                  {% else %}
                
                  {% endif %}</p>

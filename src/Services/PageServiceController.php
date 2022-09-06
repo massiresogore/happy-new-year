@@ -12,6 +12,8 @@ class PageServiceController
 
     public function __construct(ParameterBagInterface $parameterBagInterface)
     {
+
+
         $this->timezone = $parameterBagInterface->get('app.timezone');
     }
     public function dayLeftUntilNextYear()

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %} About {{ parent() }} {% endblock title %}
+{% block title %} {{'About'|trans}} {{ parent() }} {% endblock title %}
 
-{% block header %}<h1>About Page</h1>{% endblock header %}
+{% block header %}<h1>{{'About_page' |trans}}</h1>{% endblock header %}
 
 {% block body %}
-
+    <img class='massire-img' src='/images/Massire_nice.webp'>
 {% endblock body %}
