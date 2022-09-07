@@ -17,8 +17,8 @@
                     <ul class='nav-link'>
                         <li><a href="{{ asset( path('app_home') )}}" >{{'Home' |trans}}</a></li>
                         <div class="locale">
-                            <li><a href="/fr" >🇫🇷</a></li>
-                            <li><a href="/en" >🇬🇧</a></li>
+                            <li><a href={{ path('app_home', {'_locale': 'fr'})}} >🇫🇷</a></li>
+                            <li><a href={{path('app_home', {'_locale': 'en'})}} >🇬🇧</a></li>
                         </div>  
                     </ul>
                     

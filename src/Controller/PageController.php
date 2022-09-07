@@ -9,14 +9,20 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-#[Route('/{_locale<%app.locales%>?}')]
+
 class PageController extends AbstractController
 {
     public function __construct(private PageServiceController $pageServiceController)
     {
     }
 
-    #[Route('', name: 'app_home')]
+    #[Route('/')]
+    public function homeredirect(): Response
+    {
+        return $this->redirectToRoute('app_home', ['_locale' => 'en']);
+    }
+
+    #[Route('/{_locale<%app.locales%>?}', name: 'app_home')]
     public function index(Request $request, TranslatorInterface $translator): Response
     {
 
@@ -31,7 +37,7 @@ class PageController extends AbstractController
         ]);
     }
 
-    #[Route('/about', name: 'app_about')]
+    #[Route('/{_locale<%app.locales%>?}/about', name: 'app_about')]
     public function about(): Response
     {
 
