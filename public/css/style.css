@@ -19,11 +19,10 @@ nav{
   /* background-color: orange; */
 }
 
-main{
-  /* background-color: red; */
-}
+
 header{
   /* background-color: green; */
+  text-align: center;
 }
 footer{
   display: flex;

@@ -1,3 +1,14 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+    prefix: /{_locale}
+    requirements: 
+        _locale: '%app.locales%'
+    
+  
+
+redirect:
+   path: /
+   controller: App\Controller\PageController::redirectToLocale
+   defaults:
+    path: /fr

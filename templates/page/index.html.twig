@@ -2,18 +2,13 @@
 
 {% block title %}Home {{ parent() }} {% endblock %}
 
-
 {% block header %} 
     {% if isNewYear %}
         <h1>{{'Happy_new_year' |trans}} {{'now' | date('d/m/Y H:i:s', timezone)}}</h1>
     {% else %}
         <h1>{{'Oops_there_is_still'|trans}}</h1>
-        <h3>{{'current_day_until_next_year'|trans({'currentDate': currentDate |format_datetime(), 'dayLeft': dayLeft}) | raw}} en {{ timezone }} !!!</h3>
+        <h3>{{'current_day_until_next_year'|trans({'currentDate': currentDate |format_datetime(), 'dayLeft': dayLeft}) | raw}} {{'in'|trans}} {{ timezone }} !!!</h3>
 {% endif %} {% endblock header %}
-{% block body %}
-
-
-{% endblock body %}
 
 
  

@@ -16,14 +16,13 @@ class PageController extends AbstractController
     {
     }
 
-    #[Route('/')]
-    public function homeredirect(): Response
+    public function redirectToLocale(): Response
     {
-        return $this->redirectToRoute('app_home', ['_locale' => 'en']);
+        return  $this->redirectToRoute('app_home', ['_locale' => 'fr']);
     }
 
-    #[Route('/{_locale<%app.locales%>?}', name: 'app_home')]
-    public function index(Request $request, TranslatorInterface $translator): Response
+    #[Route('', name: 'app_home')]
+    public function index(TranslatorInterface $translator): Response
     {
 
         $isnewyear = $this->pageServiceController->isNewYear();
@@ -37,7 +36,7 @@ class PageController extends AbstractController
         ]);
     }
 
-    #[Route('/{_locale<%app.locales%>?}/about', name: 'app_about')]
+    #[Route('/about', name: 'app_about')]
     public function about(): Response
     {
 

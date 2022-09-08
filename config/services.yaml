@@ -5,7 +5,8 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     app.timezone: Europe/Paris
-    app.locales: en|fr
+    app.locales: fr|en
+  
   
     
 
